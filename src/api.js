@@ -1,5 +1,4 @@
-// import {cleanFilms, cleanSpecies, cleanPlanets, cleanVehicles} from './cleanData.js';
-import {cleanFilms, cleanSpecies, cleanVehicles} from './cleanData.js';
+import {cleanFilms, cleanSpecies, cleanPlanets, cleanVehicles} from './cleanData.js';
 
 const root = 'https://swapi.co/api/';
 
@@ -38,6 +37,9 @@ const getSpecies = async (allPeople) => {
 	const unresolvedPeople = await allPeople.map(async (person) => {
 		const speciesURL = await fetch(person.species);
 		const species = await speciesURL.json();
+
+		console.log("species: ", species);
+
 		const {name} = species;
 		return ({...person, species: name});
 	});
@@ -48,28 +50,28 @@ const getPlanets = async () => {
 	try {
 		const response = await fetch(`${root}planets`);
 		const planetData = await response.json();
-		// const residentData = await getResidents(planetData.results)
-		// console.log("residentData ", residentData);
-
-		// const cleanedPlanets = await cleanPlanets(residentData);
-		// console.log(cleanedPlanets);
-
-		// return cleanedPlanets;
-		console.log(planetData);
+		const residentData = await getResidents(planetData.results)
+		const cleanedPlanets = await cleanPlanets(residentData);
+		return cleanedPlanets;
 	} catch(error) {
 			return "error";
 	}	
 };
 
-// const getResidents = async (residentData) => {
-// 	const unresolvedResidents = await residentData.map(async (resident) => {
-// 		const residentURL = await fetch(resident.residents);
-// 		const residents = await residentURL.json();
-// 		const {name} = residents;
-// 		return ({...resident, residents: name});
-// 	});
-// 	return Promise.all(unresolvedResidents);
-// }
+const getResidents = async (planetData) => {
+	const unresolvedResidents = await planetData.map(async (planetData) => {
+		console.log("planetData: ", planetData);
+
+		const residentsURL = await fetch(planetData.residents);
+		const residents = await residentsURL.json();
+
+		console.log("residents: ", residents); //residents.name will return correctly!
+
+		const {name} = residents;
+		return ({...planetData, residents: name});
+	});
+	return Promise.all(unresolvedResidents);
+}
 
 const getVehicles = async (allVehicles) => {
 	try {
@@ -88,6 +90,6 @@ export {
 	getHomeworld,
 	getSpecies,
 	getPlanets,
-	// getResidents,
+	getResidents,
 	getVehicles
 };

@@ -18,18 +18,20 @@ const cleanSpecies = (species) => {
 	return speciesData;
 }
 
-// const cleanPlanets = (planets) => {
-// 	const planetData = planets.map(planet => {
-// 		return {
-// 			name: planet.name,
-// 			terrain: planet.terrain,
-// 			population: planet.population,
-// 			climate: planet.climate
-// 			// residents: planet.residents
-// 		}
-// 	})
-// 	return planetData;
-// }
+const cleanPlanets = (planets) => {
+	const planetData = planets.map(planet => {
+		console.log(planet);
+
+		return {
+			name: planet.name,
+			terrain: planet.terrain,
+			population: planet.population,
+			climate: planet.climate,
+			residents: planet.residents
+		}
+	})
+	return planetData;
+}
 
 const cleanVehicles = (vehicles) => {
 	const vehiclesData = vehicles.map(vehicle => {
@@ -46,6 +48,6 @@ const cleanVehicles = (vehicles) => {
 export {
 	cleanFilms, 
 	cleanSpecies,
-	// cleanPlanets,
+	cleanPlanets,
 	cleanVehicles
 };
