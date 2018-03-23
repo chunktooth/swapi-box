@@ -3,11 +3,15 @@ import {cleanFilms, cleanSpecies, cleanPlanets, cleanVehicles} from './cleanData
 const root = 'https://swapi.co/api/';
 
 const getFilms = async () => {
-	const randomNumber = Math.floor(Math.random() * 8);
-	const response = await fetch(`${root}films/${randomNumber}`);
-	const filmData = await response.json();
-	const cleanedFilm = cleanFilms(filmData);
-	return cleanedFilm;
+	try{
+		const randomNumber = Math.floor(Math.random() * 8);
+		const response = await fetch(`${root}films/${randomNumber}`);
+		const filmData = await response.json();
+		const cleanedFilm = cleanFilms(filmData);
+		return cleanedFilm;
+	} catch(error) {
+			return "error";
+	}
 };
 
 const getPeople = async () => {
@@ -29,7 +33,7 @@ const getHomeworld = async (homeworldData) => {
 		const homeworld = await homeworldURL.json();
 		const {name, population} = homeworld;
 		return ({...person, homeworld: name, population});
-	})
+	}) 	
 	return Promise.all(unresolvedPeople);
 };
 
@@ -65,9 +69,12 @@ const getResidents = async (planetData) => {
 		const residentsURL = await fetch(planetData.residents);
 		const residents = await residentsURL.json();
 
-		console.log("residents: ", residents); //residents.name will return correctly!
+		console.log("residents: ", residents); 
+		//residents.name will return correctly!
 
 		const {name} = residents;
+		// console.log({...planetData, residents: name})
+
 		return ({...planetData, residents: name});
 	});
 	return Promise.all(unresolvedResidents);
@@ -80,9 +87,9 @@ const getVehicles = async (allVehicles) => {
 		const cleanedVehicles = cleanVehicles(vehiclesData.results);
 		return cleanedVehicles;	
 	} catch (error) {
-		return "error";
+			return "error";
 	}	
-}
+};
 
 export {
 	getFilms, 

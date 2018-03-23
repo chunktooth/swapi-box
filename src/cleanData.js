@@ -1,7 +1,7 @@
 const cleanFilms = (film) => {
 	return {
 		title: film.title,
-		episode: film.episode_id,
+		episode: romanize(film.episode_id),
 		crawl: film.opening_crawl
 	}
 }
@@ -20,8 +20,6 @@ const cleanSpecies = (species) => {
 
 const cleanPlanets = (planets) => {
 	const planetData = planets.map(planet => {
-		console.log(planet);
-
 		return {
 			name: planet.name,
 			terrain: planet.terrain,
@@ -45,9 +43,40 @@ const cleanVehicles = (vehicles) => {
 	return vehiclesData;
 }
 
+const romanize = (num) => {
+	let romanNumerals = '';
+	switch(num) {
+	case 1:
+		romanNumerals = "I";
+		break;
+	case 2:
+		romanNumerals = "II";
+		break;
+	case 3:
+		romanNumerals = "III";
+		break;
+	case 4:
+		romanNumerals = "IV";
+		break;
+	case 5:
+		romanNumerals = "V";
+		break;
+	case 6:
+		romanNumerals = "VI";
+		break;
+	case 7:
+		romanNumerals = "VII";
+		break;
+	default:
+		return "X";
+	}
+	return romanNumerals;
+}
+
 export {
 	cleanFilms, 
 	cleanSpecies,
 	cleanPlanets,
-	cleanVehicles
+	cleanVehicles,
+	romanize
 };
