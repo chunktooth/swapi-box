@@ -1,3 +1,5 @@
+import getResidents from './api';
+
 const cleanFilms = (film) => {
 	return {
 		title: film.title,
@@ -19,16 +21,17 @@ const cleanSpecies = (species) => {
 }
 
 const cleanPlanets = (planets) => {
-	const planetData = planets.map(planet => {
+	const planetData = planets.map(async (planet) => {
+		const residents = await getResidents(planet.residents)
 		return {
 			name: planet.name,
 			terrain: planet.terrain,
 			population: planet.population,
 			climate: planet.climate,
-			residents: planet.residents
+			residents: residents
 		}
 	})
-	return planetData;
+	return Promise.all(planetData);
 }
 
 const cleanVehicles = (vehicles) => {

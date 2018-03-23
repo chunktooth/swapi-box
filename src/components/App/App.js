@@ -28,23 +28,21 @@ class App extends Component {
   }
 
  setCategory = (category) => {
-    this.setState({ categories: this.state[category] });
+    this.setState({ categories: this.state[category] 
+    });
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img 
+          <img src={logo}
             className="Starwars-logo" 
-            src={logo}
             alt="Starwars title" />
-        </header>
         <Opening film={this.state.film} />
-        <Navigation 
-          setCategory={this.setCategory} />
-        <CardContainer 
-          categories={this.state.categories} />
+        </header>
+        <Navigation setCategory={this.setCategory} />
+        <CardContainer categories={this.state.categories} />
       </div>
     );
   } 

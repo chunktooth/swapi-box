@@ -4,6 +4,7 @@ import './CardContainer.css';
 
 const CardContainer = ({categories}) => {
 	const displayCards = categories.map(data => {
+
 		return <Card 
 			key={data.name}
 			categories={data} 

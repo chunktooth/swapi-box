@@ -5,16 +5,26 @@
 	border: 2px solid #2B3536;
 	border-radius: 25px;
 	margin: 10px;
-	box-shadow: 0px 0px 27px 2px #0ff;
+	padding: 7px;
+	box-shadow: 0px 0px 10px 2px #0ff;
 }
 
 .Card-header {
 	padding: 3px;
 	color: #F3DA4A;
-	border-bottom: solid 2px #92ACA3;
 	font-family: 'Quantico', sans-serif;
 }
 
-.favorite-btn {
-	
+.favorite {
+	background-color: transparent;
+	border: none;
+}
+
+.diskette {
+	width: 26px;
+	margin-bottom: 16px;
+}
+
+.diskette:hover {
+	box-shadow: 0px 0px 20px 3px #F3DA4A;
 }
