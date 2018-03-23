@@ -1,0 +1,19 @@
+.Card {
+	width: 30%;
+	background: hsla(0, 0%, 0%, .7);
+	color: #92ACA3;
+	border: 2px solid #2B3536;
+	border-radius: 25px;
+	margin: 10px;
+	box-shadow: 0px 0px 27px 2px #0ff;
+}
+
+.Card-header {
+	padding: 3px;
+	color: #F3DA4A;
+	border-bottom: solid 2px #92ACA3;
+}
+
+.favorite-btn {
+
+}

@@ -1,0 +1,18 @@
+.Navigation {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	top: 182px;
+	margin: auto;
+}
+
+.nav-btn {
+	background-color: hsla(0, 0%, 0%, .7);
+	color: #92ACA3;
+	width: 160px;
+	margin: 20px;
+	font-size: 1.2em;
+	border: 2px solid #2B3536;
+	box-shadow: 0px 0px 27px 2px #0ff;
+}
