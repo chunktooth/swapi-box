@@ -1,26 +1,30 @@
 import React from 'react';
 import diskette from '../../images/diskette.svg';
+// import redDisk from '../../images/red-disk.svg';
 import './Card.css';
 
-const Card = ({ categoryData }) => {
-  const cardKeys = Object.keys(categoryData);
+const Card = ({data, setFavorites}) => {
+  const cardKeys = Object.keys(data);
   const filteredKeys = cardKeys.filter(key => key !== 'name');
+  
   const selectedData = filteredKeys.map((selectedKey, index) => {
     const capitalizedKey = selectedKey.charAt(0).toUpperCase() + selectedKey.substr(1);
     return <p key={index}>
       <span className="keyName">{capitalizedKey}: </span> 
-      {categoryData[selectedKey]}
+      {data[selectedKey]}
       </p>
   })
 
   return (
     <article className='Card'>
-      <h3 className="Card-header">{categoryData.name}</h3>
+      <h3 className="Card-header">{data.name}</h3>
       <div>{selectedData}</div>
-      <button className='favorite'>
+      <button 
+        className="favorite"
+        onClick={() => setFavorites(data)}>
         <img 
           src={diskette}
-          className='diskette'
+          className="diskette"
           alt='Save as favorites'/>
       </button>
     </article>

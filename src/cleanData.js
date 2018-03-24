@@ -12,8 +12,8 @@ const cleanSpecies = (species) => {
 	const speciesData = species.map(data => {
 		return {
 			name: data.name,
-			homeworld: data.homeworld,
 			species: data.species,
+			homeworld: data.homeworld,
 			population: data.population
 		}
 	})

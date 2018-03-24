@@ -9,7 +9,7 @@ const Opening = ({film}) => {
 			<div className="star-wars">
 				<div className="crawl">
 					<div className="ep-title">
-						<p>{episode}</p>
+						<p>EPISODE {episode}</p>
 						<h1>{title}</h1>
 					</div>
 					<p>{crawl}</p>

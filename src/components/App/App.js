@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
+import saved from '../../images/red-disk.svg';
 import Opening from '../Opening/Opening';
 import Navigation from '../Navigation/Navigation';
 import CardContainer from '../CardContainer/CardContainer';
