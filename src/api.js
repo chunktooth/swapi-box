@@ -3,11 +3,15 @@ import {cleanFilms, cleanSpecies, cleanPlanets, cleanVehicles} from './cleanData
 const root = 'https://swapi.co/api/';
 
 const getFilms = async () => {
-	const randomNumber = Math.floor(Math.random() * 8);
-	const response = await fetch(`${root}films/${randomNumber}`);
-	const filmData = await response.json();
-	const cleanedFilm = cleanFilms(filmData);
-	return cleanedFilm;
+	try{
+		const randomNumber = Math.floor(Math.random() * 8);
+		const response = await fetch(`${root}films/${randomNumber}`);
+		const filmData = await response.json();
+		const cleanedFilm = cleanFilms(filmData);
+		return cleanedFilm;
+	} catch(error) {
+			return "error";
+	}
 };
 
 const getPeople = async () => {
@@ -29,17 +33,14 @@ const getHomeworld = async (homeworldData) => {
 		const homeworld = await homeworldURL.json();
 		const {name, population} = homeworld;
 		return ({...person, homeworld: name, population});
-	})
+	}) 	
 	return Promise.all(unresolvedPeople);
 };
 
-const getSpecies = async (allPeople) => {
-	const unresolvedPeople = await allPeople.map(async (person) => {
+const getSpecies = async (peopleData) => {
+	const unresolvedPeople = await peopleData.map(async (person) => {
 		const speciesURL = await fetch(person.species);
 		const species = await speciesURL.json();
-
-		console.log("species: ", species);
-
 		const {name} = species;
 		return ({...person, species: name});
 	});
@@ -50,8 +51,7 @@ const getPlanets = async () => {
 	try {
 		const response = await fetch(`${root}planets`);
 		const planetData = await response.json();
-		const residentData = await getResidents(planetData.results)
-		const cleanedPlanets = await cleanPlanets(residentData);
+		const cleanedPlanets = await cleanPlanets(planetData.results);
 		return cleanedPlanets;
 	} catch(error) {
 			return "error";
@@ -59,30 +59,24 @@ const getPlanets = async () => {
 };
 
 const getResidents = async (planetData) => {
-	const unresolvedResidents = await planetData.map(async (planetData) => {
-		console.log("planetData: ", planetData);
-
-		const residentsURL = await fetch(planetData.residents);
+	const unresolvedResidents = await planetData.map(async (planet) => {
+		const residentsURL = await fetch(planet);
 		const residents = await residentsURL.json();
-
-		console.log("residents: ", residents); //residents.name will return correctly!
-
-		const {name} = residents;
-		return ({...planetData, residents: name});
+		return residents.name;
 	});
 	return Promise.all(unresolvedResidents);
 }
 
-const getVehicles = async (allVehicles) => {
+const getVehicles = async () => {
 	try {
 		const response = await fetch(`${root}vehicles`);
 		const vehiclesData = await response.json();
 		const cleanedVehicles = cleanVehicles(vehiclesData.results);
 		return cleanedVehicles;	
 	} catch (error) {
-		return "error";
+			return "error";
 	}	
-}
+};
 
 export {
 	getFilms, 
