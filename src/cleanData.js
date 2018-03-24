@@ -1,4 +1,4 @@
-import getResidents from './api';
+import {getResidents} from './api';
 
 const cleanFilms = (film) => {
 	return {
@@ -71,7 +71,7 @@ const romanize = (num) => {
 		romanNumerals = "VII";
 		break;
 	default:
-		return "X";
+		return "V";
 	}
 	return romanNumerals;
 }

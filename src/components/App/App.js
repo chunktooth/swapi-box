@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Opening from '../Opening/Opening';
 import Navigation from '../Navigation/Navigation';
 import CardContainer from '../CardContainer/CardContainer';
-import {getFilms, getPeople, getPlanets, getVehicles} from '../../api';
+import {getFilms, getPeople, getPlanets, getResidents, getVehicles} from '../../api';
 import logo from '../../images/starwars.png';
 import './App.css';
 
@@ -28,21 +28,21 @@ class App extends Component {
   }
 
  setCategory = (category) => {
-    this.setState({ categories: this.state[category] 
-    });
+    this.setState({ categories: this.state[category] });
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo}
+          <img 
+            src={logo}
             className="Starwars-logo" 
             alt="Starwars title" />
         <Opening film={this.state.film} />
         </header>
         <Navigation setCategory={this.setCategory} />
-        <CardContainer categories={this.state.categories} />
+        <CardContainer categoryData={this.state.categories} />
       </div>
     );
   } 

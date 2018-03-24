@@ -2,12 +2,12 @@ import React from 'react';
 import Card from '../Card/Card';
 import './CardContainer.css';
 
-const CardContainer = ({categories}) => {
-	const displayCards = categories.map(data => {
+const CardContainer = ({categoryData}) => {
+	const displayCards = categoryData.map(data => {
 
 		return <Card 
 			key={data.name}
-			categories={data} 
+			categoryData={data} 
 		/>
 	});
 
