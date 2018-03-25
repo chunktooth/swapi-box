@@ -12,7 +12,7 @@ const Planets = ({data, setFavorites}) => {
 	});
 
 	return (
-		<article>
+		<article className="Container">
 			{displayPlanets}
 		</article>
 	)

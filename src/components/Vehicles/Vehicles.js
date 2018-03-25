@@ -12,7 +12,7 @@ const Vehicles = ({data, setFavorites}) => {
 	});
 
 	return (
-		<article>
+		<article className="Container">
 			{displayVehicles}
 		</article>
 	)

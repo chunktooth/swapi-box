@@ -14,7 +14,7 @@ const People = ({data, setFavorites}) => {
 	})
 
 	return (
-		<article>
+		<article className="Container">
 			{displayPeople}
 		</article>
 	)

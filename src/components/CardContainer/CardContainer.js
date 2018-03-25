@@ -5,30 +5,33 @@ import Planets from '../Planets/Planets';
 import Vehicles from '../Vehicles/Vehicles';
 import Favorites from '../Favorites/Favorites';
 import PropTypes from 'prop-types';
-import './CardContainer.css';
 
 const CardContainer = ({people, planets, vehicles, favorites, setFavorites}) => {
 	return (
 		<Switch>
-			<Route exact path='/people' component={() => 
+			<Route exact path='/people' 
+				className="CardContainer" component={() => 
 				<People 
 					data={people} 
 					setFavorites={setFavorites} />}
 			/>
 
-			<Route exact path='/planets' component={() => 
+			<Route exact path='/planets' 
+				className="CardContainer" component={() => 
 				<Planets 
 					data={planets} 
 					setFavorites={setFavorites} />}
 			/>
 
-			<Route exact path='/vehicles' component={() => 
+			<Route exact path='/vehicles' 
+			className="CardContainer" component={() => 
 				<Vehicles 
 					data={vehicles} 
 					setFavorites={setFavorites} />}
 			/>
 
-			<Route exact path='/favorites' component={() => 
+			<Route exact path='/favorites' 
+			className="CardContainer" component={() => 
 				<Favorites
 					data={favorites} 
 					setFavorites={setFavorites} />}

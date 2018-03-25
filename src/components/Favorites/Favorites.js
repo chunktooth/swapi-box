@@ -12,7 +12,7 @@ const Favorites = ({data, setFavorites}) => {
 	})
 
 	return (
-		<article>
+		<article className="Container">
 			{displayFavorites}
 		</article>
 	)
