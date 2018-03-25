@@ -1,4 +1,4 @@
-/*.Card-container {
+.Container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
@@ -9,4 +9,4 @@
 	box-sizing: border-box;
 	width: 100%;
 	margin: auto;
-}*/
+}
