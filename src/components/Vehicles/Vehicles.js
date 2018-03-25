@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 
 const Vehicles = ({data, setFavorites}) => {
 	const displayVehicles = data.map((vehicle, index) => {

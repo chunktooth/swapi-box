@@ -4,6 +4,7 @@ import People from '../People/People';
 import Planets from '../Planets/Planets';
 import Vehicles from '../Vehicles/Vehicles';
 import Favorites from '../Favorites/Favorites';
+import PropTypes from 'prop-types';
 import './CardContainer.css';
 
 const CardContainer = ({people, planets, vehicles, favorites, setFavorites}) => {

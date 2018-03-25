@@ -1,6 +1,6 @@
 import React from 'react';
 import diskette from '../../images/diskette.svg';
-// import redDisk from '../../images/red-disk.svg';
+import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = ({data, setFavorites}) => {

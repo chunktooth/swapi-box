@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from './Navigation.js';
+import Navigation from './Navigation';
 import {shallow} from 'enzyme';
 
 describe('Navigation', () => {

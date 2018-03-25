@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import saved from '../../images/red-disk.svg';
+import saved from '../../images/saved.svg';
 import Opening from '../Opening/Opening';
 import Navigation from '../Navigation/Navigation';
 import CardContainer from '../CardContainer/CardContainer';
 import {getFilms, getPeople, getPlanets, getVehicles} from '../../api';
 import logo from '../../images/starwars.png';
+import PropTypes from 'prop-types';
 import './App.css';
 
 class App extends Component {
@@ -21,26 +22,27 @@ class App extends Component {
     }
   }
 
-    async componentDidMount() {
-      const film = await getFilms();
-      const people = await getPeople();
-      const planets = await getPlanets();
-      const vehicles = await getVehicles();
-      this.setState({ film, people, planets, vehicles });
-    }
-  
-    setCategory = (category) => {
-      this.setState({ categories: this.state[category] });
-    }
+  async componentDidMount() {
+    const film = await getFilms();
+    const people = await getPeople();
+    const planets = await getPlanets();
+    const vehicles = await getVehicles();
+    this.setState({ film, people, planets, vehicles });
+  }
 
+  setCategory = (category) => {
+    this.setState({ categories: this.state[category] });
+  }
 
   setFavorites = (favoriteData) => {
     let favorites = [...this.state.favorites];
 
-    if (!favorites.find(info => info.name === favoriteData.name)) {
-      favorites.push(favoriteData);
+    if (!favorites.find(info => 
+      info.name === favoriteData.name)) {
+        favorites.push(favoriteData);
     } else {
-      favorites = favorites.filter(info => info.name !== favoriteData.name);
+      favorites = favorites.filter(info => 
+        info.name !== favoriteData.name);
     }
     this.setState({favorites});
   };
@@ -79,3 +81,7 @@ class App extends Component {
 }
 
 export default App;
+
+App.propTypes = {
+  
+}
