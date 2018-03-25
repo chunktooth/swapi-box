@@ -102,7 +102,8 @@ export const mockCleanPeopleData = [{
   "homeworld": undefined, 
   "name": "Luke Skywalker", 
   "population": undefined, 
-  "species": undefined }]
+  "species": undefined 
+}]
 
 export const mockPlanetData = {
   "count": 61, 
