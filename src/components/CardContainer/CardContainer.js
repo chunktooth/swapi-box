@@ -37,4 +37,12 @@ const CardContainer = ({people, planets, vehicles, favorites, setFavorites}) => 
 	)
 }
 
+CardContainer.propTypes = {
+  people: PropTypes.array,
+  planets: PropTypes.array,
+  vehicles: PropTypes.array,
+  favorites: PropTypes.array,
+  setFavorites: PropTypes.func
+}
+
 export default CardContainer;

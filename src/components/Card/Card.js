@@ -31,4 +31,9 @@ const Card = ({data, setFavorites}) => {
   );
 };
 
+Card.propTypes = {
+  data: PropTypes.object.isRequired,
+  setFavorites: PropTypes.func.isRequired
+}
+
 export default Card;

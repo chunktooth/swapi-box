@@ -35,16 +35,16 @@ class App extends Component {
   }
 
   setFavorites = (favoriteData) => {
-    let favorites = [...this.state.favorites];
+    let favorites = this.state.favorites;
 
-    if (!favorites.find(info => 
-      info.name === favoriteData.name)) {
-        favorites.push(favoriteData);
+    if (!favorites.find(data => 
+      data.name === favoriteData.name)) {
+        favorites = [...favorites, favoriteData] 
     } else {
-      favorites = favorites.filter(info => 
-        info.name !== favoriteData.name);
+      this.state.favorites.filter(data => 
+        data.name !== favoriteData.name);
     }
-    this.setState({favorites});
+    this.setState({ favorites });
   };
 
   render() {
@@ -80,8 +80,13 @@ class App extends Component {
   } 
 }
 
-export default App;
-
 App.propTypes = {
-  
+  film: PropTypes.array,
+  people: PropTypes.array,
+  planets: PropTypes.array,
+  vehicles: PropTypes.array,
+  favorites: PropTypes.array,
+  categories: PropTypes.array
 }
+
+export default App;
