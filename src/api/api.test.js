@@ -9,8 +9,11 @@ import { mockFilmData,
   mockVehicleData,
   mockCleanVehicleData } from '../mockData';
 import { getFilms,
-	getPeople } from './api';
-import { cleanFilms } from '../cleanData';
+	getPeople,
+	getHomeworld,
+	getSpecies } from './api';
+import { cleanFilms,
+	cleanSpecies } from '../cleanData';
 
 describe('API', () => {
 
@@ -58,8 +61,27 @@ describe('API', () => {
 			expect(window.fetch).toHaveBeenCalled();
 		});
 
+		it('should return cleaned people data', async () => {
+			window.fetch = jest.fn().mockImplementation(() => ({
+				status: 200,
+				json: () => new Promise((resolve) => {
+					resolve(mockPeopleData)
+				})
+			}))
+			const result = await getPeople();
+			expect(result).toEqual(mockCleanPeopleData);
+		});
 
+		it('should throw an error if getPeople cannot fetch', async () => {
+			window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+				status: 500
+			}))
+			const result = await getPeople();
+			expect(result).toEqual('error');
+		});			
 	});
+
+	
 
 });
 
