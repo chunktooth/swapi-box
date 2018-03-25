@@ -6,9 +6,9 @@ import './Card.css';
 const Card = ({data, setFavorites}) => {
   const cardKeys = Object.keys(data);
   const filteredKeys = cardKeys.filter(key => key !== 'name');
-  
   const selectedData = filteredKeys.map((selectedKey, index) => {
     const capitalizedKey = selectedKey.charAt(0).toUpperCase() + selectedKey.substr(1);
+
     return <p key={index}>
       <span className="keyName">{capitalizedKey}: </span> 
       {data[selectedKey]}
@@ -16,7 +16,7 @@ const Card = ({data, setFavorites}) => {
   })
 
   return (
-    <article className='Card'>
+    <article className="Card">
       <h3 className="Card-header">{data.name}</h3>
       <div>{selectedData}</div>
       <button 
