@@ -1,16 +1,22 @@
 import React from 'react';
 import People from './People';
-import {Shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 
 describe('People', () => {
-	let people;
+	
+	const mockFunction = jest.fn();
+	const mockData = [{
+		name: 'R2-D2',
+		homeworld: 'Naboo',
+		population: '300'
+	}];
 
-	beforeEach(() => {
-		people = shallow(<People />);
-	});
+	const wrapper = shallow(<People 
+			data={mockData} 
+			setFavorites={mockFunction} />)
 
 	it('should match the snapshot', () => {
-		expect(people).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 	
-})
+});

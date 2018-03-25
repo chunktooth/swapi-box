@@ -6,7 +6,6 @@ import Navigation from '../Navigation/Navigation';
 import CardContainer from '../CardContainer/CardContainer';
 import {getFilms, getPeople, getPlanets, getVehicles} from '../../api';
 import logo from '../../images/starwars.png';
-import PropTypes from 'prop-types';
 import './App.css';
 
 class App extends Component {

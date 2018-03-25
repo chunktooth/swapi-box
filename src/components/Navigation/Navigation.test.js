@@ -3,14 +3,13 @@ import Navigation from './Navigation';
 import {shallow} from 'enzyme';
 
 describe('Navigation', () => {
-	let navigation;
-
-	beforeEach(() => {
-		navigation = shallow(<Navigation />);	
-	});
+	const mockFunction = jest.fn();
+	const wrapper = shallow(<Navigation 
+		setCategory={mockFunction}
+		/>);	
 
 	it('should match the snapshot', () => {
-		expect(navigation).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 });

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './People.css';
 
 const People = ({data, setFavorites}) => {
+
 	const displayPeople = data.map((people, index) => {
 		return <Card 
 			key={index}
@@ -18,5 +19,10 @@ const People = ({data, setFavorites}) => {
 		</article>
 	)
 };
+
+People.propTypes = {
+  data: PropTypes.array,
+  setFavorites: PropTypes.func
+}
 
 export default People;	

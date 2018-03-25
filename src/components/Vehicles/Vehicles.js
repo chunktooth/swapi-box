@@ -18,4 +18,9 @@ const Vehicles = ({data, setFavorites}) => {
 	)
 }
 
+Vehicles.propTypes = {
+  data: PropTypes.array,
+  setFavorites: PropTypes.func
+}
+
 export default Vehicles;

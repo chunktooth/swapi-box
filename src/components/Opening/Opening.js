@@ -20,4 +20,8 @@ const Opening = ({film}) => {
 	)	
 }
 
+Opening.propTypes = {
+  film: PropTypes.object
+}
+
 export default Opening;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Opening from './Opening';
-import {Shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 
 describe('Card', () => {
 	let opening;

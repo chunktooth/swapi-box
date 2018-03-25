@@ -18,4 +18,9 @@ const Planets = ({data, setFavorites}) => {
 	)
 }
 
+Planets.propTypes = {
+  data: PropTypes.array,
+  setFavorites: PropTypes.func
+}
+
 export default Planets;
