@@ -1,16 +1,21 @@
 import React from 'react';
 import Favorites from './Favorites';
-import {Shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 
 describe('Favorites', () => {
-	let favorites;
-
-	beforeEach(() => {
-		favorites = shallow(<Favorites />);
-	});
+	const mockFunction = jest.fn()
+	const mockData = [{
+		name: 'R2-D2',
+		homeworld: 'Naboo',
+		population: '300'
+	}];
+	const wrapper = shallow(<Favorites 
+		data={mockData}
+		setCategory={mockFunction}
+		/>);	
 
 	it('should match the snapshot', () => {
-		expect(favorites).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
-	
-})
+
+});

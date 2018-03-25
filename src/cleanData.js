@@ -1,4 +1,4 @@
-import {getResidents} from './api';
+import {getResidents} from './api/api';
 
 const cleanFilms = (film) => {
 	return {

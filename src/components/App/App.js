@@ -4,7 +4,7 @@ import saved from '../../images/saved.svg';
 import Opening from '../Opening/Opening';
 import Navigation from '../Navigation/Navigation';
 import CardContainer from '../CardContainer/CardContainer';
-import {getFilms, getPeople, getPlanets, getVehicles} from '../../api';
+import {getFilms, getPeople, getPlanets, getVehicles} from '../../api/api';
 import logo from '../../images/starwars.png';
 import './App.css';
 
@@ -22,7 +22,9 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const film = await getFilms();
+    const randomNumber = Math.floor(Math.random() * 8);
+
+    const film = await getFilms(randomNumber);
     const people = await getPeople();
     const planets = await getPlanets();
     const vehicles = await getVehicles();
@@ -77,15 +79,6 @@ class App extends Component {
       </div>
     );
   } 
-}
-
-App.propTypes = {
-  film: PropTypes.array,
-  people: PropTypes.array,
-  planets: PropTypes.array,
-  vehicles: PropTypes.array,
-  favorites: PropTypes.array,
-  categories: PropTypes.array
 }
 
 export default App;

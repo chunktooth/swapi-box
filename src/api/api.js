@@ -1,10 +1,9 @@
-import {cleanFilms, cleanSpecies, cleanPlanets, cleanVehicles} from './cleanData.js';
+import {cleanFilms, cleanSpecies, cleanPlanets, cleanVehicles} from '../cleanData';
 
 const root = 'https://swapi.co/api/';
 
-const getFilms = async () => {
+const getFilms = async (randomNumber) => {
 	try{
-		const randomNumber = Math.floor(Math.random() * 8);
 		const response = await fetch(`${root}films/${randomNumber}`);
 		const filmData = await response.json();
 		const cleanedFilm = cleanFilms(filmData);

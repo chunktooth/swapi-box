@@ -35,6 +35,10 @@ const Navigation = ({setCategory}) => {
 	)
 }
 
+Navigation.propTypes = {
+  setCategory: PropTypes.func
+}
+
 export default Navigation;
 
 
