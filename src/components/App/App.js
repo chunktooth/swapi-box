@@ -42,7 +42,7 @@ class App extends Component {
       data.name === favoriteData.name)) {
         favorites = [...favorites, favoriteData] 
     } else {
-      favorites.filter(data => 
+      favorites = favorites.filter(data => 
         data.name !== favoriteData.name);
     }
     this.setState({ favorites });
