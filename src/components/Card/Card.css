@@ -33,3 +33,9 @@
 .diskette:hover {
 	box-shadow: 0px 0px 20px 3px #F3DA4A;
 }
+
+@media screen and (max-width: 555px) {
+	.Card {
+		width: 75%;
+	}	
+}

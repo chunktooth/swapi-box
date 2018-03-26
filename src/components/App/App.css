@@ -61,3 +61,11 @@ body {
 .nav {
 	text-decoration: none;
 }
+
+@media screen and (max-width: 560px) {
+	.Starwars-logo {
+		top: 50px;
+		width: 300px;
+		height: 110px;
+	}
+}

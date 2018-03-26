@@ -5,3 +5,9 @@
 	justify-content: space-evenly;
 	top: 100px;
 }
+
+@media screen and (max-width: 600px) {
+	.Container {
+		top: 250px;
+	}
+}
