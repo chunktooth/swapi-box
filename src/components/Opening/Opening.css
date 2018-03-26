@@ -12,13 +12,14 @@ body {
   left: 50%;
   margin-left: -9em;
   background: #000;
-  color: #9999;
+  color: #F3DA4A;
   font-size: 350%;
   font-weight: bold;
   text-align: justify;
   overflow: hidden;
   transform-origin: 50% 100%;
   transform: perspective(300px) rotateX(25deg);
+  z-index: 2;
 }
 
 .star-wars:after {

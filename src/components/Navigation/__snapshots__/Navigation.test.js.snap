@@ -1,3 +1,325 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation should match the snapshot 1`] = `undefined`;
+exports[`Navigation should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Navigation
+    setCategory={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/people"
+>
+          <button
+                    className="nav-btn"
+                    onClick={[Function]}
+          >
+                    PEOPLE
+          </button>
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/planets"
+>
+          <button
+                    className="nav-btn"
+                    onClick={[Function]}
+          >
+                    PLANETS
+          </button>
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/vehicles"
+>
+          <button
+                    className="nav-btn"
+                    onClick={[Function]}
+          >
+                    VEHICLES
+          </button>
+</NavLink>,
+      ],
+      "className": "Navigation",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": <button
+            className="nav-btn"
+            onClick={[Function]}
+>
+            PEOPLE
+</button>,
+          "className": "nav",
+          "to": "/people",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "PEOPLE",
+            "className": "nav-btn",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "PEOPLE",
+          "type": "button",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": <button
+            className="nav-btn"
+            onClick={[Function]}
+>
+            PLANETS
+</button>,
+          "className": "nav",
+          "to": "/planets",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "PLANETS",
+            "className": "nav-btn",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "PLANETS",
+          "type": "button",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": <button
+            className="nav-btn"
+            onClick={[Function]}
+>
+            VEHICLES
+</button>,
+          "className": "nav",
+          "to": "/vehicles",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "VEHICLES",
+            "className": "nav-btn",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "VEHICLES",
+          "type": "button",
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/people"
+>
+            <button
+                        className="nav-btn"
+                        onClick={[Function]}
+            >
+                        PEOPLE
+            </button>
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/planets"
+>
+            <button
+                        className="nav-btn"
+                        onClick={[Function]}
+            >
+                        PLANETS
+            </button>
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/vehicles"
+>
+            <button
+                        className="nav-btn"
+                        onClick={[Function]}
+            >
+                        VEHICLES
+            </button>
+</NavLink>,
+        ],
+        "className": "Navigation",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": <button
+              className="nav-btn"
+              onClick={[Function]}
+>
+              PEOPLE
+</button>,
+            "className": "nav",
+            "to": "/people",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "PEOPLE",
+              "className": "nav-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "PEOPLE",
+            "type": "button",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": <button
+              className="nav-btn"
+              onClick={[Function]}
+>
+              PLANETS
+</button>,
+            "className": "nav",
+            "to": "/planets",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "PLANETS",
+              "className": "nav-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "PLANETS",
+            "type": "button",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": <button
+              className="nav-btn"
+              onClick={[Function]}
+>
+              VEHICLES
+</button>,
+            "className": "nav",
+            "to": "/vehicles",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "VEHICLES",
+              "className": "nav-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "VEHICLES",
+            "type": "button",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

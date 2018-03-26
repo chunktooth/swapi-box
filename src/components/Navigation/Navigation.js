@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './Navigation.css';
 
 const Navigation = ({setCategory}) => {
@@ -32,6 +33,10 @@ const Navigation = ({setCategory}) => {
 			
 		</section>
 	)
+}
+
+Navigation.propTypes = {
+  setCategory: PropTypes.func
 }
 
 export default Navigation;

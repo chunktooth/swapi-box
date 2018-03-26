@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Opening.css'
 
 const Opening = ({film}) => {
@@ -9,7 +10,7 @@ const Opening = ({film}) => {
 			<div className="star-wars">
 				<div className="crawl">
 					<div className="ep-title">
-						<p>{episode}</p>
+						<p>EPISODE {episode}</p>
 						<h1>{title}</h1>
 					</div>
 					<p>{crawl}</p>
@@ -17,6 +18,10 @@ const Opening = ({film}) => {
 			</div>
 		</section>
 	)	
+}
+
+Opening.propTypes = {
+  film: PropTypes.object
 }
 
 export default Opening;
