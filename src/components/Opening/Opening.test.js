@@ -2,15 +2,11 @@ import React from 'react';
 import Opening from './Opening';
 import {shallow} from 'enzyme';
 
-describe('Card', () => {
-	let opening;
-
-	beforeEach(() => {
-		opening = shallow(<Opening />);
-	});
+describe('Opening', () => {
 
 	it('should match the snapshot', () => {
-		expect(opening).toMatchSnapshot();
+		let wrapper = shallow(<Opening />);
+		expect(wrapper).toMatchSnapshot();
 	});
 	
-})
+});

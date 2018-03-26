@@ -1,16 +1,16 @@
 import React from 'react';
 import CardContainer from './CardContainer';
-import {Shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 
 describe('CardContainer', () => {
-	let container;
+	let wrapper, mockData, mockFunction;
 
 	beforeEach(() => {
-		container = shallow(<CardContainer />);
+		wrapper = shallow(<CardContainer />);
 	});
 
 	it('should match the snapshot', () => {
-		expect(container).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 	
-})
+});

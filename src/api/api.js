@@ -28,7 +28,7 @@ const getPeople = async () => {
 
 const getHomeworld = async (peopleData) => {
 	try {
-		const unresolvedPeople = await peopleData.map(async (person) => {
+		const unresolvedPeople = peopleData.map(async (person) => {
 		const homeworldURL = await fetch(person.homeworld);
 		const homeworld = await homeworldURL.json();
 		const {name, population} = homeworld;
@@ -41,7 +41,7 @@ const getHomeworld = async (peopleData) => {
 };
 
 const getSpecies = async (peopleArray) => {
-	const unresolvedPeople = await peopleArray.map(async (person) => {
+	const unresolvedPeople = peopleArray.map(async (person) => {
 		const speciesURL = await fetch(person.species);
 		const species = await speciesURL.json();
 		const {name} = species;

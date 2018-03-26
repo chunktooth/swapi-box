@@ -1,38 +1,43 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import {shallow} from 'enzyme';
-// import {mockFilmData,
-//   mockCleanFilmData,
-//   mockPeopleData,
-//   mockCleanPeopleData,
-//   mockPlanetData,
-//   mockCleanPlanetData,
-//   mockVehicleData,
-//   mockCleanVehicleData} from '../../mockData';
+import {getFilms} from '../../api/api';
+import {mockFilmData, mockVehicleData} from '../../mockData';
 
 describe('App', () => {
-	let app;
+	let wrapper, mockObject, mockFunction;
 
-// 	beforeEach(() => {
-// 		app = shallow(<App />);
-// 	})
+	beforeEach(() => {
+		mockObject = {
+			name: "C-3PO", 
+			species: "Droid", 
+			homeworld: "Tatooine", 
+			population: "200000" };
+		mockFunction = jest.fn();
+		wrapper = (<App />, 
+			{ disableLifeCycleMethods: true });
+	});
 
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
+	it('should match the snapshot', () => {
+		expect(wrapper).toMatchSnapshot();
+	});
 
-// it('should match the snapshot', () => {
-// 	expect(app).toMatchSnapshot();
-// });
+	// it('should call getFilms, getPeople, getPlanets and getVehicles in component did mount', async () => {
+	// 	await expect(getFilms()).toHaveBeenCalled();
+	// 	expect(wrapper.find('films').length).toEqual(mockFilmData);
+	// });
 
-// it.only('should be able to set category', () => {
-// 	expect(app.state('categories')).toEqual([]);
-// 	app.instance().setCategory('People');
-// 	expect.setState('categories')).toEqual();
-// });
+	// it('should be able to set category', () => {
+	// 	expect(wrapper.state('categories')).toEqual([]);
+	// 	wrapper.instance().setCategory('vehicles');
+	// 	wrapper.setState();
+	// 	expect(wrapper.state('categories')).toEqual(mockVehicleData.results);
+	// });
 
+	// it('should add new favorite object to the array', () => {
+	// 	expect(wrapper.state('favorites')).toEqual([]);
+	// 	wrapper.instance().setFavorites(mockObject);
+	// 	expect(wrapper.state('favorites')).length.toEqual(1);
+	// });
 
-})
+});

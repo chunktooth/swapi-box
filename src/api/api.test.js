@@ -17,7 +17,7 @@ import { getFilms,
 import { cleanFilms,
 	cleanSpecies } from '../cleanData';
 
-describe('API', () => {
+describe.skip('API', () => {
 
 
 	describe('GET FILMS', () => {

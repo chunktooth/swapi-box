@@ -9,29 +9,25 @@ import PropTypes from 'prop-types';
 const CardContainer = ({people, planets, vehicles, favorites, setFavorites}) => {
 	return (
 		<Switch>
-			<Route exact path='/people' 
-				className="CardContainer" component={() => 
+			<Route exact path='/people' component={() => 
 				<People 
 					data={people} 
 					setFavorites={setFavorites} />}
 			/>
 
-			<Route exact path='/planets' 
-				className="CardContainer" component={() => 
+			<Route exact path='/planets' component={() => 
 				<Planets 
 					data={planets} 
 					setFavorites={setFavorites} />}
 			/>
 
-			<Route exact path='/vehicles' 
-			className="CardContainer" component={() => 
+			<Route exact path='/vehicles' component={() => 
 				<Vehicles 
 					data={vehicles} 
 					setFavorites={setFavorites} />}
 			/>
 
-			<Route exact path='/favorites' 
-			className="CardContainer" component={() => 
+			<Route exact path='/favorites' component={() => 
 				<Favorites
 					data={favorites} 
 					setFavorites={setFavorites} />}
