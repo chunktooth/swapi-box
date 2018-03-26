@@ -93,14 +93,32 @@ describe('API', () => {
 			window.fetch = jest.fn().mockImplementation(() => ({
 				status: 200,
 				json: () => new Promise((resolve) => {
-					resolve(mockPeopleArray)
+					resolve(mockHomeworldData)
 				})
 			}))
 			getHomeworld(mockPeopleArray);
 			expect(window.fetch).toHaveBeenCalled();
 		});
 
-		it()
+		// it('should return homeworld data', async () => {
+		// 	window.fetch = jest.fn().mockImplementation(() => ({
+		// 		status: 200,
+		// 		json: () => new Promise((resolve) => {
+		// 			resolve(mockHomeworldData)
+		// 		})
+		// 	}))
+		// 	const result = await getHomeworld(mockPeopleArray);
+		// 	expect(result).toEqual(mockReturnedHomeworld);
+		// });
+
+		it('should throw an error if getHomeworld cannot fetch', async () => {
+			window.fetch = jest.fn().mockImplementation(() => 
+				Promise.reject({
+				status: 500
+			}))
+			const result = await getHomeworld(mockPeopleArray);
+			expect(result).toEqual('error');
+		});	
 	});
 
 
