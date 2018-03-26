@@ -4,16 +4,17 @@ import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = ({data, setFavorites}) => {
+
   const cardKeys = Object.keys(data);
   const filteredKeys = cardKeys.filter(key => key !== 'name');
   const selectedData = filteredKeys.map((selectedKey, index) => {
     const capitalizedKey = selectedKey.charAt(0).toUpperCase() + selectedKey.substr(1);
 
-    return <p key={index}>
-      <span className="keyName">{capitalizedKey}: </span> 
+   return <p key={index}>
+      <span className="keyName">{capitalizedKey}: </span>
       {data[selectedKey]}
       </p>
-  })
+  });
 
   return (
     <article className="Card">
@@ -33,7 +34,7 @@ const Card = ({data, setFavorites}) => {
 
 Card.propTypes = {
   data: PropTypes.object.isRequired,
-  setFavorites: PropTypes.func.isRequired
+  setFavorites: PropTypes.func
 }
 
 export default Card;
