@@ -40,6 +40,7 @@ ShallowWrapper {
           setFavorites={[Function]}
 />,
       ],
+      "className": "Container",
     },
     "ref": null,
     "rendered": Array [
@@ -80,6 +81,7 @@ ShallowWrapper {
             setFavorites={[Function]}
 />,
         ],
+        "className": "Container",
       },
       "ref": null,
       "rendered": Array [
