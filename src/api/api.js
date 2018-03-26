@@ -17,8 +17,8 @@ const getPeople = async () => {
 	try {
 		const response = await fetch(`${root}people`);
 		const peopleData = await response.json();
-		const homeworldData = await getHomeworld(peopleData.results);
-		const speciesData = await getSpecies(homeworldData);
+		const peopleArray = await getHomeworld(peopleData.results);
+		const speciesData = await getSpecies(peopleArray);
 		const cleanedSpecies = await cleanSpecies(speciesData);
 		return cleanedSpecies;
 	} catch(error) {
@@ -26,8 +26,9 @@ const getPeople = async () => {
 	}	
 };
 
-const getHomeworld = async (homeworldData) => {
-	const unresolvedPeople = await homeworldData.map(async (person) => {
+const getHomeworld = async (peopleArray) => {
+
+	const unresolvedPeople = await peopleArray.map(async (person) => {
 		const homeworldURL = await fetch(person.homeworld);
 		const homeworld = await homeworldURL.json();
 		const {name, population} = homeworld;

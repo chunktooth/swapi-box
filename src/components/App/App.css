@@ -62,7 +62,7 @@ body {
 	text-decoration: none;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
 	.Starwars-logo {
 		top: 50px;
 		width: 300px;

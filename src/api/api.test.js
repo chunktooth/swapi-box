@@ -4,6 +4,7 @@ import { mockFilmData,
   mockCleanFilmData,
   mockPeopleData,
   mockCleanPeopleData,
+  mockPeopleArray,
   mockPlanetData,
   mockCleanPlanetData,
   mockVehicleData,
@@ -86,37 +87,19 @@ describe('API', () => {
 	});
 
 
-		describe('GET HOMEWORLD', () => {
+	describe('GET HOMEWORLD', () => {
 		it('should fetch homeworld data after calling getHomeworld', () => {
 			window.fetch = jest.fn().mockImplementation(() => ({
 				status: 200,
 				json: () => new Promise((resolve) => {
-					resolved(mockHomeworldData)
+					resolve(mockPeopleArray)
 				})
 			}))
-			getHomeworld();
+			getHomeworld(mockPeopleArray);
 			expect(window.fetch).toHaveBeenCalled();
 		});
 
-		it('should return cleaned homeworld data', async () => {
-			window.fetch = jest.fn().mockImplementation(() => ({
-				status: 200,
-				json: () => new Promise((resolve) => {
-					resolved(mockHomeworldData)
-				})
-			}))
-			const result = await getHomeworld();
-			expect(result).toEqual(mockCleanHomeworldData);
-		});
-
-		it('should throw an error if getHomeworld cannot fetch', async () => {
-			window.fetch = jest.fn().mockImplementation(() => 
-				Promise.reject({
-				status: 500
-			}))
-			const result = await getHomeworld();
-			expect(result).toEqual('error');
-		});			
+		it()
 	});
 
 
