@@ -28,10 +28,10 @@ const getPeople = async () => {
 
 const getHomeworld = async (peopleData) => {
 	try {
-		const unresolvedPeople = peopleData.map(async (person) => {
-		const homeworldURL = await fetch(person.homeworld);
-		const homeworld = await homeworldURL.json();
-		const {name, population} = homeworld;
+		const unresolvedPeople = await peopleData.map(async (person) => {
+		const response = await fetch(person.homeworld);
+		const homeworldData = await response.json();
+		const {name, population} = homeworldData;
 		return ({...person, homeworld: name, population});
 		}) 	
 		return Promise.all(unresolvedPeople);
@@ -41,10 +41,10 @@ const getHomeworld = async (peopleData) => {
 };
 
 const getSpecies = async (peopleArray) => {
-	const unresolvedPeople = peopleArray.map(async (person) => {
-		const speciesURL = await fetch(person.species);
-		const species = await speciesURL.json();
-		const {name} = species;
+	const unresolvedPeople = await peopleArray.map(async (person) => {
+		const response = await fetch(person.species);
+		const speciesData = await response.json();
+		const {name} = speciesData;
 		return ({...person, species: name});
 	});
 	return Promise.all(unresolvedPeople);
@@ -63,9 +63,9 @@ const getPlanets = async () => {
 
 const getResidents = async (planetData) => {
 	const unresolvedResidents = await planetData.map(async (planet) => {
-		const residentsURL = await fetch(planet);
-		const residents = await residentsURL.json();
-		return residents.name;
+		const response = await fetch(planet);
+		const residentsData = await response.json();
+		return residentsData.name;
 	});
 	return Promise.all(unresolvedResidents);
 }
