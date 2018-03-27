@@ -9,7 +9,7 @@ const getFilms = async (randomNumber) => {
 		const cleanedFilm = cleanFilms(filmData);
 		return cleanedFilm;
 	} catch(error) {
-			return "error";
+		return "error";
 	}
 };
 
@@ -22,7 +22,7 @@ const getPeople = async () => {
 		const cleanedSpecies = await cleanSpecies(speciesData);
 		return cleanedSpecies;
 	} catch(error) {
-			return "error";
+		return "error";
 	}	
 };
 
@@ -36,7 +36,7 @@ const getHomeworld = async (peopleData) => {
 		}) 	
 		return Promise.all(unresolvedPeople);
 	} catch(error) {
-			return "error";
+		return "error";
 	}
 };
 
@@ -57,7 +57,7 @@ const getPlanets = async () => {
 		const cleanedPlanets = await cleanPlanets(planetData.results);
 		return cleanedPlanets;
 	} catch(error) {
-			return "error";
+		return "error";
 	}	
 };
 
@@ -77,7 +77,7 @@ const getVehicles = async () => {
 		const cleanedVehicles = cleanVehicles(vehiclesData.results);
 		return cleanedVehicles;	
 	} catch (error) {
-			return "error";
+		return "error";
 	}	
 };
 

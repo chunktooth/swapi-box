@@ -21,7 +21,7 @@ const Opening = ({film}) => {
 }
 
 Opening.propTypes = {
-  film: PropTypes.object
+  film: PropTypes.objectOf(PropTypes.string)
 }
 
 export default Opening;
