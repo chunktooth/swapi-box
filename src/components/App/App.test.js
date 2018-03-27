@@ -13,8 +13,15 @@ import {mockFilmData,
 describe.skip('App', () => {
 	let wrapper;
 
-	beforeEach(() => {
-		wrapper = shallow(<App />);
+  beforeEach(() => {
+    mockObject = {
+      name: "C-3PO", 
+      species: "Droid", 
+      homeworld: "Tatooine", 
+      population: "200000" };
+    mockFunction = jest.fn();
+    wrapper = (<App />, 
+      { disableLifeCycleMethods: true });
 	});
 
   it('renders without crashing', () => {
@@ -29,14 +36,14 @@ describe.skip('App', () => {
 
   it('should be able to set category', () => {
   	expect(wrapper.state('categories')).toEqual([]);
-  	wrapper.instance().setCategory('People');
+  	wrapper.instance().setCategory('people');
   	expect.setState('categories').toEqual(mockPeopleData);
   });
 
   it('should be able to add favorites', () => {
     expect(wrapper.state('favorites')).toEqual([]);
-    wrapper.instance().setFavorites(mockPeopleData);
+    wrapper.instance().setFavorites('people');
     expect.(wrapper.state('favorites')).toEqual(1);
-  }
+  });
 
 });
