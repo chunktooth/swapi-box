@@ -1,5 +1,5 @@
 ## SWAPI-Box
-By Om Saetehn
+By Om Saetehn https://github.com/chunktooth
 
 ## About
 Starwars fans/enthusiasts rejoice! Here users can browse information about Starwars based on 3 different categories- People, Planets and Vehicles, with a feature to save/ unsave each card as favorites for later viewing.
