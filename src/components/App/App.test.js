@@ -1,43 +1,49 @@
 import React from 'react';
 import App from './App';
 import {shallow} from 'enzyme';
-import {getFilms} from '../../api/api';
-import {mockFilmData, mockVehicleData} from '../../mockData';
+import {mockFilmData,
+  mockCleanFilmData,
+  mockPeopleData,
+  mockCleanPeopleData,
+  mockPlanetData,
+  mockCleanPlanetData,
+  mockVehicleData,
+  mockCleanVehicleData} from '../../mockData';
 
-describe('App', () => {
-	let wrapper, mockObject, mockFunction;
+describe.skip('App', () => {
+	let wrapper;
 
-	beforeEach(() => {
-		mockObject = {
-			name: "C-3PO", 
-			species: "Droid", 
-			homeworld: "Tatooine", 
-			population: "200000" };
-		mockFunction = jest.fn();
-		wrapper = (<App />, 
-			{ disableLifeCycleMethods: true });
+  beforeEach(() => {
+    mockObject = {
+      name: "C-3PO", 
+      species: "Droid", 
+      homeworld: "Tatooine", 
+      population: "200000" };
+    mockFunction = jest.fn();
+    wrapper = (<App />, 
+      { disableLifeCycleMethods: true });
 	});
 
-	it('should match the snapshot', () => {
-		expect(wrapper).toMatchSnapshot();
-	});
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 
-	// it('should call getFilms, getPeople, getPlanets and getVehicles in component did mount', async () => {
-	// 	await expect(getFilms()).toHaveBeenCalled();
-	// 	expect(wrapper.find('films').length).toEqual(mockFilmData);
-	// });
+  it('should match the snapshot', () => {
+  	expect(wrapper).toMatchSnapshot();
+  });
 
-	// it('should be able to set category', () => {
-	// 	expect(wrapper.state('categories')).toEqual([]);
-	// 	wrapper.instance().setCategory('vehicles');
-	// 	wrapper.setState();
-	// 	expect(wrapper.state('categories')).toEqual(mockVehicleData.results);
-	// });
+  it('should be able to set category', () => {
+  	expect(wrapper.state('categories')).toEqual([]);
+  	wrapper.instance().setCategory('people');
+  	expect.setState('categories').toEqual(mockPeopleData);
+  });
 
-	// it('should add new favorite object to the array', () => {
-	// 	expect(wrapper.state('favorites')).toEqual([]);
-	// 	wrapper.instance().setFavorites(mockObject);
-	// 	expect(wrapper.state('favorites')).length.toEqual(1);
-	// });
+  it('should be able to add favorites', () => {
+    expect(wrapper.state('favorites')).toEqual([]);
+    wrapper.instance().setFavorites('people');
+    expect.(wrapper.state('favorites')).toEqual(1);
+  });
 
 });

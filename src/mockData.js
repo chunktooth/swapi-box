@@ -203,7 +203,7 @@ export const mockCleanPlanetData = {
   ]
 }
 
-export const mockVehicleData = [{
+export const mockVehicleData = {
   "results": [
     {
       "name": "Sand Crawler", 

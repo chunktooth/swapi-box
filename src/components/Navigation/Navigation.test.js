@@ -5,7 +5,7 @@ import {shallow} from 'enzyme';
 describe('Navigation', () => {
 
 	it('should match the snapshot', () => {
-		const wrapper = shallow(<Navigation />);
+		const wrapper = shallow(<Navigation />);	
 		expect(wrapper).toMatchSnapshot();
 	});
 
