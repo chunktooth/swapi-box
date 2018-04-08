@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      film: {},
+      film: [],
       people: [],
       planets: [],
       vehicles: [],
@@ -23,6 +23,7 @@ class App extends Component {
 
   async componentDidMount() {
     const randomNumber = Math.floor(Math.random() * 8);
+
     const film = await getFilms(randomNumber);
     const people = await getPeople();
     const planets = await getPlanets();
@@ -31,12 +32,12 @@ class App extends Component {
   }
 
   setCategory = (category) => {
-    console.log(category)
     this.setState({ categories: this.state[category] });
   }
 
   setFavorites = (favoriteData) => {
-    let favorites = [this.state.favorites];
+    let favorites = this.state.favorites;
+
     if (!favorites.find(data => 
       data.name === favoriteData.name)) {
         favorites = [...favorites, favoriteData] 
