@@ -1,5 +1,5 @@
 ## SWAPI-Box
-By Om Saetehn
+By Om Saetehn https://github.com/chunktooth
 
 ## About
 Starwars fans/enthusiasts rejoice! Here users can browse information about Starwars based on 3 different categories- People, Planets and Vehicles, with a feature to save/ unsave each card as favorites for later viewing.
@@ -10,7 +10,7 @@ This project was made with React.js framework, first time implementing Async-awa
 ## Challenges
 Fetching a nested array within an object, especially from a large dataset could become cluttered and easily mislocated, also the page may lag and take some time to load. Testing API fetch is still a fairly new concept to me.
 
-## Win
+## Wins!
 Created a dynamic children component, favorite card toggling, clean data for particular display of info, iconic opening text crawl thanks to an online CSS community and a code snippet for glowing effect on each button hover state. 
 
 ## Screenshot
