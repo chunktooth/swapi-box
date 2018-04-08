@@ -36,14 +36,14 @@ describe.skip('App', () => {
 
   it('should be able to set category', () => {
   	expect(wrapper.state('categories')).toEqual([]);
-  	wrapper.instance().setCategory('people');
+  	wrapper.instance().setCategory('People');
   	expect.setState('categories').toEqual(mockPeopleData);
   });
 
   it('should be able to add favorites', () => {
     expect(wrapper.state('favorites')).toEqual([]);
-    wrapper.instance().setFavorites('people');
+    wrapper.instance().setFavorites(mockPeopleData);
     expect.(wrapper.state('favorites')).toEqual(1);
-  });
+  }
 
 });
