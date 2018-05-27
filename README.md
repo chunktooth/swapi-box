@@ -1,5 +1,6 @@
 ## SWAPI-Box
-By [!Om Saetehn](https://github.com/chunktooth)
+By [Om Saetehn](https://github.com/chunktooth)
+
 Published on https://chunktooth.github.io/swapi-box/
 
 ## About
